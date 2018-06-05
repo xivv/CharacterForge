@@ -1,0 +1,221 @@
+<section ng-controller="characterSheet">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Character Class</label>
+                </div>
+                <div class="field has-addons">
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                        <option>Fighter</option>
+                                        <option>Druid</option>
+                                    </select>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-dark">Add</button>
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-danger">Remove</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <table class="table is-bordered">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>HitDie</th>
+                                <th>Character Classes</th>
+                                <th>Base Attack Bonus</th>
+                                <th>Fortitude Save</th>
+                                <th>Reflex Save</th>
+                                <th>Will Save</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="i in classes track by $index">
+                                <th>1</th>
+                                <th>10</th>
+                                <td>Fighter</td>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>20</th>
+                                <th>200</th>
+                                <td></td>
+                                <th>20</th>
+                                <th>12</th>
+                                <th>6</th>
+                                <th>6</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Ability Score</th>
+                                <th>Final Score</th>
+                                <th>Modifier</th>
+                                <th>Point Buy</th>
+                                <th>Race Bonus</th>
+                                <th>Misc Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Strength</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th>Strength</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th>Dexterity</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th>Constitution</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th>Wisdom</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th>Charisma</th>
+                                <th>10</th>
+                                <td>0</td>
+                                <th>
+                                    <div class="control">
+                                        <input class="input" type="number" value=10>
+                                    </div>
+                                </th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <div class="field">
+                    <label class="label">Character Race</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                            <option>Elf</option>
+                            <option>Dwarven</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Character Age</label>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <input class="input" type="number">
+                    </div>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                            <option>Young</option>
+                            <option>Adult</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Character Name</label>
+                    <div class="control">
+                        <input class="input" type="text">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Character Gender</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Character Alignment and Deity</label>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                    <option>Neutral</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                    <option>None</option>
+                                    <option>Asmodeus</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

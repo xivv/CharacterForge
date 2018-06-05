@@ -1,0 +1,114 @@
+<section ng-controller="characterAbilities">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title">Traits Available</h1>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input checked="true" type="checkbox">
+                            Campaign
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Combat
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Equipment
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Faith
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Family
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Magic
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Race
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Regional
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Religion
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Social
+                        </label>
+                    </div>
+                </div>
+                <ul dnd-list="models.lists.traits.data" dnd-allowed-types="models.lists.traits.allowedTypes">
+                    <li ng-repeat="trait in models.lists.traits.data track by $index" dnd-type="trait.type" dnd-draggable="trait" dnd-moved="models.lists.traits.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = trait" ng-class="{'selected': models.selected === trait}">
+                        {{trait.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-dark">Add Selected Trait</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h1 class="title">Drawbacks Available</h1>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Search...">
+                    </div>
+                </div>
+                <ul dnd-list="models.lists.drawbacks.data" dnd-allowed-types="models.lists.drawback.allowedTypes">
+                    <li ng-repeat="drawback in models.lists.drawbacks.data track by $index" dnd-draggable="drawback" dnd-type="drawback.type" dnd-moved="models.lists.drawbacks.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = drawback" ng-class="{'selected': models.selected === drawback}">
+                        {{drawback.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-dark">Add Selected Drawback</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h1 class="title">Traits Selected</h1>
+                <ul dnd-list="models.lists.selectedTraits.data" dnd-allowed-types="models.lists.selectedTraits.allowedTypes">
+                    <li ng-repeat="trait in models.lists.selectedTraits.data track by $index" dnd-draggable="trait" dnd-type="trait.type" dnd-moved="models.lists.selectedTraits.data.splice($index, 1)" dnd-selected="models.selected = trait" class="{'selected': models.selected === trait}">
+                        {{trait.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-danger">Remove Selected Trait</button>
+                    </div>
+                </div>
+                <h1 class="title">Drawbacks Selected</h1>
+                <ul dnd-list="models.lists.selectedDrawbacks.data" dnd-allowed-types="models.lists.selectedDrawbacks.allowedTypes">
+                    <li ng-repeat="drawback in models.lists.selectedDrawbacks.data track by $index" dnd-draggable="drawback" dnd-type="drawback.type" dnd-moved="models.lists.selectedDrawbacks.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = drawback" ng-class="{'selected': models.selected === drawback}">
+                        {{drawback.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-danger">Remove Selected Drawback</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<div ng-init="activeAbilityTab='Feats'" class="tabs is-centered is-boxed is-medium">
+    <ul>
+        <li id="Feats" ng-click="activeAbilityTab='Feats'" class="is-active" onclick="setSubTabActive(this)">
+            <a>
+                <span>Feats</span>
+            </a>
+        </li>
+        <li id="Traits" ng-click="activeAbilityTab='Traits'" onclick="setSubTabActive(this)">
+            <a>
+                <span>Traits</span>
+            </a>
+        </li>
+        <li id="Class" ng-click="activeAbilityTab='Class'" onclick="setSubTabActive(this)">
+            <a> 
+                <span>Class</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div ng-show="activeAbilityTab=='Feats'" ng-include="'/pages/feats.html'"></div>
+<div ng-show="activeAbilityTab=='Traits'" ng-include="'/pages/traits.html'"></div>

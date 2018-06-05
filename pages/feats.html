@@ -1,0 +1,89 @@
+<section ng-controller="characterAbilities">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title">Feats Available</h1>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input checked="true" type="checkbox">
+                            General
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Combat
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Item Creation
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Metamagic
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Other
+                        </label>
+                    </div>
+                </div>
+                <ul dnd-list="models.lists.feats.data">
+                    <li ng-repeat="item in models.lists.feats.data track by $index" dnd-draggable="item" dnd-moved="models.lists.feats.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                        {{item.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-dark">Add Selected Feat</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <aside class="menu">
+                    <p class="menu-label">
+                        Feat Tree
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Power Attack</a></li>
+                        <li>
+                            <ul class="menu-list">
+                                <li><a>Cleave</a></li>
+                                <li>
+                                    <ul class="menu-list">
+                                        <a>Greater Cleave</a>
+                                    </ul>
+                                </li>
+                                <li><a>Headbut</a></li>
+                                <li>
+                                    <ul class="menu-list">
+                                        <a>Greater Headbut</a>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column">
+                <h1 class="title">Feats Selected</h1>
+                <ul dnd-list="models.lists.selectedFeats.data">
+                    <li ng-repeat="item in models.lists.selectedFeats.data track by $index" dnd-draggable="item" dnd-moved="models.lists.selectedFeats.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                        {{item.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-danger">Remove Selected Feat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

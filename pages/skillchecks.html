@@ -1,0 +1,71 @@
+<section ng-controller="characterSkillChecks">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Total Skillpoints 999</label>
+                        <label class="label">Skillpoints Left 999</label>
+                    </div>
+                    <div class="control">
+                        <button class="button is-danger">Reset All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <table class="table is-narrow">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Total Bonus</th>
+                            <th>Misc Bonus</th>
+                            <th>Ability Bonus</th>
+                            <th>Item Bonus</th>
+                            <th>Total Ranks</th>
+                            <th>Class Skill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="skillcheck in skillchecks track by $index">
+                            <th>Knowledge(Engineering)</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th><input type="number" class="input" value="0"></th>
+                            <th><input checked="true" type="checkbox" readonly></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <table class="table is-narrow" cellpadding="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Total Bonus</th>
+                            <th>Misc Bonus</th>
+                            <th>Ability Bonus</th>
+                            <th>Item Bonus</th>
+                            <th>Total Ranks</th>
+                            <th>Class Skill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="skillcheck in skillchecks track by $index">
+                            <th>Knowledge(Engineering)</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th><input type="number" class="input" value="0"></th>
+                            <th><input checked="true" type="checkbox" readonly></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
