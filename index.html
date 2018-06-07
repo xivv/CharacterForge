@@ -47,14 +47,14 @@
                     <span>Skill Checks</span>
                 </a>
             </li>
-            <li id="Equipement" ng-click="activeTab='Equipement'" onclick="setTabActive(this)">
-                <a> 
-                    <span>Equipement</span>
-                </a>
-            </li>
             <li id="Item Shop" ng-click="activeTab='Item Shop'" onclick="setTabActive(this)">
                 <a>
                     <span>Item Shop</span>
+                </a>
+            </li>
+            <li id="Equipment" ng-click="activeTab='Equipment'" onclick="setTabActive(this)">
+                <a> 
+                    <span>Equipment</span>
                 </a>
             </li>
         </ul>
@@ -62,6 +62,8 @@
     <div ng-show="activeTab=='Overview'" ng-include="'/pages/overview.html'"></div>
     <div ng-show="activeTab=='Abilities'" ng-include="'/pages/abilities.html'"></div>
     <div ng-show="activeTab=='Skill Checks'" ng-include="'/pages/skillchecks.html'"></div>
+    <div ng-show="activeTab=='Item Shop'" ng-include="'/pages/itemShop.html'"></div>
+    <div ng-show="activeTab=='Equipment'" ng-include="'/pages/equipment.html'"></div>
     <br>
     <section>
         <div class="footer">
@@ -73,7 +75,20 @@
     <script>
         function setTabActive(element) {
 
-            var tab = ["Overview", "Abilities", "Skill Checks", "Equipement", "Item Shop"];
+            var tab = ["Overview", "Abilities", "Skill Checks", "Equipment", "Item Shop"];
+
+            for (var i = 0; i < tab.length; i++) {
+
+                var NAME = document.getElementById(tab[i]);
+                NAME.className = "";
+            }
+
+            element.className = "is-active";
+        }
+
+        function setItemShopSubTabActive(element) {
+
+            var tab = ["Weapons", "Armor", "Shields", "Goods", "Magic Items", "Custom Items"];
 
             for (var i = 0; i < tab.length; i++) {
 

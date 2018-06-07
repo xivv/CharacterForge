@@ -1,0 +1,22 @@
+<section ng-controller="characterEquipment">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title">Inventory</h1>
+                <ul dnd-list="models.lists.inventory.data">
+                    <li ng-repeat="item in models.lists.inventory.data track by $index" dnd-draggable="item" dnd-moved="models.lists.inventory.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                        {{item.label}}
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h1 class="title">Equipment</h1>
+                <ul dnd-list="models.lists.equipment.data">
+                    <li ng-repeat="item in models.lists.equipment.data track by $index" dnd-draggable="item" dnd-moved="models.lists.equipment.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                        {{item.label}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

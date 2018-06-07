@@ -1,0 +1,46 @@
+<section ng-controller="characterAbilities">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title">Class Abilities</h1>
+                <aside class="menu">
+                    <ul class="menu-list">
+                        <li><a>Arcanist Class Bonus</a></li>
+                        <li>
+                            <a class="is-active">Arcanist Class Feature</a>
+                        </li>
+                        <li><a>Arcanist Exploit</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column">
+                <h1 class="title">Abilities Available</h1>
+                <ul dnd-list="models.lists.classAbilities.data" dnd-allowed-types="models.lists.classAbilities.allowedTypes">
+                    <li ng-repeat="classAbility in models.lists.classAbilities.data track by $index" dnd-type="classAbility.type" dnd-draggable="classAbility" dnd-moved="models.lists.classAbilities.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = classAbility" ng-class="{'selected': models.selected === classAbility}">
+                        {{classAbility.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-dark">Add Selected Ability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h1 class="title">Selected Abilities</h1>
+                <ul dnd-list="models.lists.selectedClassAbilities.data" dnd-allowed-types="models.lists.selectedClassAbilities.allowedTypes">
+                    <li ng-repeat="selectedClassAbility in models.lists.selectedClassAbilities.data track by $index" dnd-type="selectedClassAbility.type" dnd-draggable="selectedClassAbility" dnd-moved="models.lists.selectedClassAbilities.data.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = selectedClassAbility" ng-class="{'selected': models.selected === selectedClassAbility}">
+                        {{selectedClassAbility.label}}
+                    </li>
+                </ul>
+                <br>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-danger">Remove Selected Ability</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

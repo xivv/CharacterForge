@@ -10,7 +10,7 @@
                 <span>Traits</span>
             </a>
         </li>
-        <li id="Class" ng-click="activeAbilityTab='Class'" onclick="setSubTabActive(this)">
+        <li id="Class" ng-click="activeAbilityTab='ClassAbilities'" onclick="setSubTabActive(this)">
             <a> 
                 <span>Class</span>
             </a>
@@ -19,3 +19,4 @@
 </div>
 <div ng-show="activeAbilityTab=='Feats'" ng-include="'/pages/feats.html'"></div>
 <div ng-show="activeAbilityTab=='Traits'" ng-include="'/pages/traits.html'"></div>
+<div ng-show="activeAbilityTab=='ClassAbilities'" ng-include="'/pages/classAbilities.html'"></div>

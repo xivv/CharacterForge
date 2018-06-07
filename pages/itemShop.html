@@ -1,0 +1,181 @@
+<section ng-controller="itemShop">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Funds</label>
+                            <div class="control">
+                                <input class="input" type="number" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Value</label>
+                            <div class="control">
+                                <input class="input" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Weight</label>
+                            <div class="control">
+                                <input class="input" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Light Load</label>
+                            <div class="control">
+                                <input class="input" type="number" value="33" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Medium Load</label>
+                            <div class="control">
+                                <input class="input" type="number" value="66" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Heavy Load</label>
+                            <div class="control">
+                                <input class="input" type="number" value="99" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-info">Buy Item</button>
+                        <button class="button is-dark">Customize Item</button>
+                    </div>
+                </div>
+                <div ng-init="activeItemShopTab='Feats'" class="tabs is-centered is-boxed is-medium">
+                    <ul>
+                        <li id="Weapons" ng-click="activeItemShopTab='Weapons'" class="is-active" onclick="setItemShopSubTabActive(this)">
+                            <a>
+                <span>Weapons</span>
+            </a>
+                        </li>
+                        <li id="Armor" ng-click="activeItemShopTab='Armor'" onclick="setItemShopSubTabActive(this)">
+                            <a>
+                <span>Armor</span>
+            </a>
+                        </li>
+                        <li id="Shields" ng-click="activeItemShopTab='Shields'" onclick="setItemShopSubTabActive(this)">
+                            <a> 
+                <span>Shields</span>
+            </a>
+                        </li>
+                        <li id="Goods" ng-click="activeItemShopTab='Goods'" onclick="setItemShopSubTabActive(this)">
+                            <a> 
+                <span>Goods</span>
+            </a>
+                        </li>
+                        <li id="Magic Items" ng-click="activeItemShopTab='Magic Items'" onclick="setItemShopSubTabActive(this)">
+                            <a> 
+                <span>Magic Items</span>
+            </a>
+                        </li>
+                        <li id="Custom Items" ng-click="activeItemShopTab='Custom Items'" onclick="setItemShopSubTabActive(this)">
+                            <a> 
+                <span>Custom Items</span>
+            </a>
+                        </li>
+                    </ul>
+                </div>
+                <table class="table is-fullwidth is-bordered is-hoverable is-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Weight</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="skillcheck in skillchecks track by $index">
+                            <th>Dagger</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>Weapon</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <h1 class="title">Inventory</h1>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                            <input checked="true" type="checkbox">
+                            Character Creation
+                        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                            <input checked="true" type="checkbox">
+                             Buy/Sell
+                        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                            <input checked="true" type="checkbox">
+                             Crafting
+                        </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-info">Sell Item</button>
+                    </div>
+                </div>
+                <table class="table is-fullwidth is-bordered is-hoverable is-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Weight</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="skillcheck in skillchecks track by $index">
+                            <th>Dagger</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>Weapon</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

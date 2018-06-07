@@ -10,6 +10,31 @@ app.controller("characterSkillChecks", function ($scope, CharacterObject) {
     $scope.skillchecks = new Array(20);
 });
 
+app.controller("itemShop", function ($scope, CharacterObject) {
+    $scope.character = CharacterObject;
+    $scope.skillchecks = new Array(20);
+});
+
+app.controller("characterEquipment", function ($scope, CharacterObject) {
+    $scope.character = CharacterObject;
+    $scope.skillchecks = new Array(20);
+
+    $scope.models = {
+        selected: null,
+        lists: {
+            "inventory": {
+                allowedTypes: ['item'],
+                data: []
+            },
+
+            "equipment": {
+                allowedTypes: ['item'],
+                data: []
+            }
+        }
+    }
+});
+
 app.controller("characterAbilities", function ($scope, CharacterObject) {
     $scope.character = CharacterObject;
     $scope.models = {
@@ -39,6 +64,14 @@ app.controller("characterAbilities", function ($scope, CharacterObject) {
             "selectedDrawbacks": {
                 allowedTypes: ['drawback'],
                 data: []
+            },
+            "classAbilities": {
+                allowedTypes: ['classAbility'],
+                data: []
+            },
+            "selectedClassAbilities": {
+                allowedTypes: ['classAbility'],
+                data: []
             }
         }
     };
@@ -61,6 +94,13 @@ app.controller("characterAbilities", function ($scope, CharacterObject) {
         $scope.models.lists.drawbacks.data.push({
             label: "Drawback" + i,
             type: "drawback"
+        });
+    }
+
+    for (i = 1; i <= 10; ++i) {
+        $scope.models.lists.classAbilities.data.push({
+            label: "Class Ability" + i,
+            type: "classAbility"
         });
     }
 });
